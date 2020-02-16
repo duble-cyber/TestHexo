@@ -1,218 +1,64 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="en">
 
-  
-  <title>WDC Wiki</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WDC Wiki">
-<meta property="og:url" content="https://duble-cyber.github.io/TestHexo/index.html">
-<meta property="og:site_name" content="WDC Wiki">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/TestHexo/atom.xml" title="WDC Wiki" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/TestHexo/css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/TestHexo/favicon.png" />
+    
+
+    <title>
+        
+          Hello World - WDC Wiki
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/TestHexo/css/book.css">
+
+    
+<script src="/TestHexo/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/TestHexo/" id="logo">WDC Wiki</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/TestHexo/">Home</a>
-        
-          <a class="main-nav-link" href="/TestHexo/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/TestHexo/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://duble-cyber.github.io/TestHexo"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-rpc-doc" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TestHexo/rpc-doc/" class="article-date">
-  <time datetime="2020-02-14T13:13:21.000Z" itemprop="datePublished">2020-02-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TestHexo/rpc-doc/">rpc-doc</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、-基本说明"><a href="#一、-基本说明" class="headerlink" title="一、 基本说明"></a>一、 基本说明</h3><p>1.0 区块确认完成</p>
-<p>通过事务的哈希值查询确认区块数，并且确认是否已经完成，<br>我们认为往后确定2区块即可表示已经完成。<br>无论什么事务，都要等待至少2个区块确认才算完成</p>
-<p>1.1 返回格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">* message：描述</span><br><span class="line">* data   ：数据</span><br><span class="line">* statusCode：      </span><br><span class="line">   </span><br><span class="line">&#123;</span><br><span class="line">    2000 正确</span><br><span class="line">    2100 已确认</span><br><span class="line">    2200 未确认</span><br><span class="line">    5000 错误</span><br><span class="line">    6000 格式错误</span><br><span class="line">    7000 校验错误</span><br><span class="line">    8000 异常</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>1.2 事务类型</p>
-<table>
-<thead>
-<tr>
-<th align="center">编号</th>
-<th align="center">交易类型</th>
-<th align="center">说明型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0x00</td>
-<td align="center">coinbase事务</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0x01</td>
-<td align="center">WDC转账</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">0x02</td>
-<td align="center">投票</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">0x03</td>
-<td align="center">存证事务</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="center">0x04</td>
-<td align="center">多重签名事务-多签到多签</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">0x05</td>
-<td align="center">多重签名事务-多签到普通</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="center">0x06</td>
-<td align="center">多重签名事务-普通到多签</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="center">0x07</td>
-<td align="center">资产定义</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td align="center">0x08</td>
-<td align="center">原子交换</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">0x09</td>
-<td align="center">申请孵化</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="center">0x0a</td>
-<td align="center">获取利息收益</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">0x0b</td>
-<td align="center">获取分享收益</td>
-</tr>
-<tr>
-<td align="center">12</td>
-<td align="center">0x0c</td>
-<td align="center">提取本金</td>
-</tr>
-</tbody></table>
-<h3 id="二、节点RPC"><a href="#二、节点RPC" class="headerlink" title="二、节点RPC"></a>二、节点RPC</h3><h3 id="1）-基本RPC"><a href="#1）-基本RPC" class="headerlink" title="1） 基本RPC"></a>1） 基本RPC</h3><h5 id="1-0-获取Nonce"><a href="#1-0-获取Nonce" class="headerlink" title="1.0 获取Nonce"></a>1.0 获取Nonce</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Function:sendNonce</span><br><span class="line">POST&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;sendNonce</span><br><span class="line">Parameter：pubkeyhash(String)</span><br><span class="line">Demo:</span><br><span class="line">    POST http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;sendNonce</span><br><span class="line">    POST data:</span><br><span class="line">        pubkeyhash&#x3D;0000000000000000000000000000000000000000</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">	data:Nonce(Long)</span><br></pre></td></tr></table></figure>
-<h5 id="1-1-获取余额"><a href="#1-1-获取余额" class="headerlink" title="1.1 获取余额"></a>1.1 获取余额</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Function:sendBalance</span><br><span class="line">POST&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;sendBalance</span><br><span class="line">Parameter：pubkeyhash(十六进制字符串)</span><br><span class="line">Demo:</span><br><span class="line">    POST http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;sendBalance</span><br><span class="line">    POST data:</span><br><span class="line">        pubkeyhash&#x3D;0000000000000000000000000000000000000000</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">	data:balance(Long)</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-2-广播事务"><a href="#1-2-广播事务" class="headerlink" title="1.2 广播事务"></a>1.2 广播事务</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Function:sendTransaction</span><br><span class="line">POST&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;sendTransaction</span><br><span class="line">Parameter：traninfo(十六进制字符串)</span><br><span class="line">Demo:</span><br><span class="line">    POST http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;sendTransaction</span><br><span class="line">    POST data:</span><br><span class="line">    traninfo&#x3D;000000000000000000000000000000000000000000000000000000000000000000</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-3-查询当前区块高度"><a href="#1-3-查询当前区块高度" class="headerlink" title="1.3 查询当前区块高度"></a>1.3 查询当前区块高度</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Function:height</span><br><span class="line">GET&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;height</span><br><span class="line">Parameter:</span><br><span class="line">Demo:</span><br><span class="line">    GET http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;height</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">    data:height(Long)</span><br></pre></td></tr></table></figure>
-
-<h5 id="1-4-根据事务哈希获得所在区块哈希以及高度"><a href="#1-4-根据事务哈希获得所在区块哈希以及高度" class="headerlink" title="1.4 根据事务哈希获得所在区块哈希以及高度"></a>1.4 根据事务哈希获得所在区块哈希以及高度</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Function:blockHash</span><br><span class="line">GET&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;blockHash</span><br><span class="line">Parameter：traninfo(十六进制字符串)</span><br><span class="line">Demo:</span><br><span class="line">    GET http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;blockHash?txHash&#x3D;0000000000000000000000000000000000000000000000000000</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">    data:</span><br><span class="line">        &#123;</span><br><span class="line">        &quot;blockHash&quot;:区块哈希(十六进制字符串), </span><br><span class="line">        &quot;height&quot;:区块高度(Long)</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h5 id="1-5-根据事务哈希获得区块确认状态"><a href="#1-5-根据事务哈希获得区块确认状态" class="headerlink" title="1.5 根据事务哈希获得区块确认状态"></a>1.5 根据事务哈希获得区块确认状态</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Function:transactionConfirmed</span><br><span class="line">GET&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;transactionConfirmed</span><br><span class="line">Parameter：txHash(十六进制字符串)</span><br><span class="line">Demo:</span><br><span class="line">    GET http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;transactionConfirmed?txHash&#x3D;0000000000000000000000000000000000000000</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">    data: status(int)</span><br></pre></td></tr></table></figure>
-<h5 id="1-6-根据区块高度获取事务列表"><a href="#1-6-根据区块高度获取事务列表" class="headerlink" title="1.6 根据区块高度获取事务列表"></a>1.6 根据区块高度获取事务列表</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Function:getTransactionHeight</span><br><span class="line">POST&#x2F;HTTP&#x2F;1.1&#x2F;Content-Type: application&#x2F;x-www-form-urlencoded; charset&#x3D;UTF-8</span><br><span class="line">Request URL: http:&#x2F;&#x2F;00.000.0.000:19585&#x2F;getTransactionHeight</span><br><span class="line">Parameter：height(十六进制字符串)</span><br><span class="line">Demo:</span><br><span class="line">    POST http:&#x2F;&#x2F;00.000.00.000:19585&#x2F;getTransactionHeight</span><br><span class="line">    POST data:</span><br><span class="line">        height&#x3D;100</span><br><span class="line">Response Body:</span><br><span class="line">    &#123;&quot;message&quot;:&quot;&quot;,&quot;data&quot;:[],&quot;statusCode&quot;:int&#125;</span><br><span class="line">    data:</span><br><span class="line">        String block_hash; 区块哈希16进制字符串</span><br><span class="line">    	long height; 区块高度</span><br><span class="line">    	int version; 版本号</span><br><span class="line">    	String tx_hash; 事务哈希16进制字符串</span><br><span class="line">    	int type;  事务类型</span><br><span class="line">    	long nonce;nonce</span><br><span class="line">    	String from;  发起者公钥16进制字符串</span><br><span class="line">    	long gas_price; 事务手续费单价</span><br><span class="line">    	long amount; 金额</span><br><span class="line">    	String payload; payload数据(存证事务：UTF-8编码、其余事务：十六进制字符串)</span><br><span class="line">    	String signature; 签名16进制字符串</span><br><span class="line">    	String to;  接受者公钥哈希16进制字符串</span><br></pre></td></tr></table></figure>
-<h5 id="1-7-通过事务哈希获取事务"><a href="#1-7-通过事务哈希获取事务" class="headerlink" title="1.7 通过事务哈希获取事务"></a>1.7 通过事务哈希获取事务</h5><p>```<br>Function:transaction<br>GET/HTTP/1.1/Content-Type: application/x-www-form-urlencoded; charset=UTF-8<br>Request URL: <a href="http://00.000.0.000:19585/transaction" target="_blank" rel="noopener">http://00.000.0.000:19585/transaction</a><br>Parameter：路径变量,直接传</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://duble-cyber.github.io/TestHexo/rpc-doc/" data-id="ck6phqapo0006osph4221geh0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-menu" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TestHexo/menu/" class="article-date">
-  <time datetime="2020-02-14T13:06:59.000Z" itemprop="datePublished">2020-02-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TestHexo/menu/">menu</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/TestHexo/">
+    <img src="/TestHexo/favicon.png">
+    <span>WDC WIKI</span>
+  </a>
+</div>
+    <div class="book-menu">
+  <ul>
 <li><a href="/rpc-doc">rpc doc</a><h1 id="H1-is-separator"><a href="#H1-is-separator" class="headerlink" title="H1 is separator"></a>H1 is separator</h1></li>
 </ul>
 <h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><ul>
@@ -238,79 +84,31 @@
 <li>this unordered list will find H6</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://duble-cyber.github.io/TestHexo/menu/" data-id="ck6phqapk0002osph956e5g7a" class="article-share-link">Share</a>
-      
-      
-    </footer>
+</div>
+
+
+<script src="/TestHexo/js/book-menu.js"></script>
+
   </div>
-  
-</article>
 
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
 
-  
-    <article id="post-newpage" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TestHexo/newpage/" class="article-date">
-  <time datetime="2020-02-14T04:25:00.000Z" itemprop="datePublished">2020-02-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TestHexo/newpage/">newpage</a>
-    </h1>
-  
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>sfsdfsdf士大夫ss</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://duble-cyber.github.io/TestHexo/newpage/" data-id="ck6phqapm0004osphguod3fb3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/TestHexo/hello-world/" class="article-date">
-  <time datetime="2020-02-14T02:35:00.000Z" itemprop="datePublished">2020-02-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/TestHexo/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hhttp://47.75.197.137:4000/admin/#/exo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hhttp://47.75.197.137:4000/admin/#/exo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
@@ -324,109 +122,75 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://duble-cyber.github.io/TestHexo/hello-world/" data-id="ck6phqape0000osph7wd652j6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+</div>
 
 
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
+  <div class="book-comments">
     
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/TestHexo/archives/2020/02/">February 2020</a></li></ul>
-    </div>
+
+
   </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/TestHexo/rpc-doc/">rpc-doc</a>
-          </li>
-        
-          <li>
-            <a href="/TestHexo/menu/">menu</a>
-          </li>
-        
-          <li>
-            <a href="/TestHexo/newpage/">newpage</a>
-          </li>
-        
-          <li>
-            <a href="/TestHexo/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
+<script src="/TestHexo/js/book-post.js"></script>
+
+        </div>
       </div>
-      <footer id="footer">
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2020-02-14</div>
     </div>
   </div>
-</footer>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/TestHexo/js/book-toc.js"></script>
+
+</div>
+      </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/TestHexo/" class="mobile-nav-link">Home</a>
-  
-    <a href="/TestHexo/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/TestHexo/fancybox/jquery.fancybox.css">
-
-  
-<script src="/TestHexo/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/TestHexo/js/script.js"></script>
-
-
-
-
   </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
 </body>
 </html>
+
+
+<script src="/TestHexo/js/book.js"></script>
